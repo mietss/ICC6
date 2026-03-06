@@ -2,7 +2,7 @@
 // Created by Mies VanBeek on 2026-03-06.
 //
 #include <stdio.h>
-#include "ICC6.h"
+#include "icc6.h"
 
 int sort_and_allocate(int* main_arr, int n, int pivot) {
     int array1[n];
