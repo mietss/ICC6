@@ -24,10 +24,13 @@ int sort_and_allocate(int* main_arr, int n, int pivot) {
 
 void bern_sort(int* main_arr, int n) {
     // call partition function to find Partition Index
-    int pi = sort_and_allocate(main_arr, n, n)
+    int pi = sort_and_allocate(main_arr, n, n);
 
     // Recursively call quickSort() for left and right
     // half based on Partition Index
-    bern_sort(main_arr, pi - 1);
-    bern_sort(main_arr, pi + 1);
+    if (pi != n || pi != 0) {
+        bern_sort(main_arr, pi - 1);
+        bern_sort(main_arr, pi + 1);
+    }
+
 }
