@@ -4,8 +4,18 @@
 #include <stdio.h>
 #include "ICC6.h"
 
-int main(int argc, char *argv[]) {
-
-
-    return 0;
+int sort_and_allocate(int* main_arr, int n, int pivot) {
+    int array1[n];
+    int array2[n];
+    for (int i = 0; i < n; i++) {
+        *(array1 + i) = 0;
+        *(array2 + i) = 0;
+    }
+    sort_pivot(main_arr, n, pivot, array1, array2);
+    for (int i = 0; i < pivot; i++) {
+        *(main_arr + i) = *(array1 + i);
+    }
+    for (int i = n+1; i < n; i++) {
+        *(main_arr + i) = *(array2 + i);
+    }
 }
